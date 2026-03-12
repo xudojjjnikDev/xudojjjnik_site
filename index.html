@@ -343,8 +343,9 @@
     .service-card:hover::after { opacity: 1; }
     .service-icon img,
     .benefit-icon img {
-        filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(155deg);
+      filter: invert(1) sepia(1) saturate(3) hue-rotate(160deg) brightness(1.1);
     }
+
     .service-icon {
       width: 48px; height: 48px;
       border-radius: 12px;
@@ -356,7 +357,6 @@
       font-size: 22px;
       margin-bottom: 24px;
     }
-
     .service-title {
       font-family: var(--font-display);
       font-size: 20px;
@@ -822,23 +822,17 @@
     <p class="section-sub reveal">Три направления, которые закрывают большинство потребностей малого бизнеса в digital.</p>
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="service-icon">
-            <img src="free-icon-coding-6633017.png" alt="Сайты" width="26" height="26">
-        </div>
+        <div class="service-icon">🌐</div>
         <div class="service-title">Разработка сайтов</div>
         <div class="service-desc">Лендинги и сайты-визитки с современным дизайном. Быстрая загрузка, мобильная адаптация, SEO-структура. Никакого лишнего — только то, что конвертирует посетителя в клиента.</div>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">
-            <img src="free-icon-chat-bot-18864614.png" alt="Сайты" width="26" height="26">
-        </div>
+        <div class="service-icon">🤖</div>
         <div class="service-title">Telegram-боты</div>
         <div class="service-desc">Боты для записи, приёма заявок, уведомлений и поддержки клиентов. Интеграция с Google Sheets, CRM, платёжными системами. Работают 24/7 без участия человека.</div>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">
-            <img src="free-icon-process-10517547.png" alt="Сайты" width="26" height="26">
-        </div>
+        <div class="service-icon">⚡</div>
         <div class="service-title">Автоматизация бизнеса</div>
         <div class="service-desc">Связываю сайт, бот и внутренние процессы в единую систему. Заявка с сайта → бот уведомляет менеджера → клиент получает подтверждение. Полный цикл без ручного труда.</div>
       </div>
@@ -949,36 +943,28 @@
   <h2 class="section-title reveal">Что вы получаете<br>работая со мной</h2>
   <div class="benefits-grid">
     <div class="benefit-card reveal">
-      <div class="benefit-icon">
-        <img src="free-icon-car-14230014.png" alt="" width="24" height="24">
-      </div>
+      <div class="benefit-icon">⚡</div>
       <div>
         <div class="benefit-title">Быстрая разработка</div>
         <div class="benefit-desc">Большинство проектов — от идеи до запуска за 3–7 дней. Без бюрократии, без бесконечных согласований.</div>
       </div>
     </div>
     <div class="benefit-card reveal">
-      <div class="benefit-icon">
-        <img src="free-icon-ux-design-6868971.png" alt="" width="24" height="24">
-      </div>
+      <div class="benefit-icon">✦</div>
       <div>
         <div class="benefit-title">Современный дизайн</div>
         <div class="benefit-desc">Делаю интерфейсы, которые выглядят как продукты больших компаний. Ваши клиенты заметят разницу.</div>
       </div>
     </div>
     <div class="benefit-card reveal">
-      <div class="benefit-icon">
-        <img src="free-icon-ai-12751608.png" alt="" width="24" height="24">
-      </div>
+      <div class="benefit-icon">🔗</div>
       <div>
         <div class="benefit-title">Умная автоматизация</div>
         <div class="benefit-desc">Связываю сайт, бота и ваши процессы в одну систему. Бизнес работает, пока вы занимаетесь главным.</div>
       </div>
     </div>
     <div class="benefit-card reveal">
-      <div class="benefit-icon">
-        <img src="free-icon-target-6792187.png" alt="" width="24" height="24">
-      </div>
+      <div class="benefit-icon">🎯</div>
       <div>
         <div class="benefit-title">Простые решения</div>
         <div class="benefit-desc">Никакого оверинжиниринга. Решаю ровно ту задачу, которая есть, без излишних усложнений и трат.</div>
@@ -1015,10 +1001,40 @@
 
 <footer>
   <div class="footer-logo">xudojjjnik</div>
-  <div class="footer-copy">© 2026 xudojjjnik. Все права защищены.</div>
+  <div class="footer-copy">© 2025 xudojjjnik. Все права защищены.</div>
 </footer>
 
 <script>
+  // ── Supabase config ────────────────────────────────────────────────────────
+  const SUPABASE_URL = 'https://obbykalanloczcybqhim.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9iYnlrYWxhbmxvY3pjeWJxaGltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNDUzNzgsImV4cCI6MjA4ODkyMTM3OH0.pIYTuJzOiiMdju9NkNU_qYJfY51fRRzG1GQNwskwjOY';
+
+  async function sbFetch(path, options = {}) {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': options.prefer || '',
+      },
+      ...options,
+    });
+    if (!res.ok) throw new Error(await res.text());
+    return res.status === 204 ? null : res.json();
+  }
+
+  async function getReviews(caseId) {
+    return sbFetch(`reviews?case_id=eq.${caseId}&order=created_at.asc`);
+  }
+
+  async function insertReview(data) {
+    return sbFetch('reviews', {
+      method: 'POST',
+      prefer: 'return=representation',
+      body: JSON.stringify(data),
+    });
+  }
+
   // ── Scroll reveal ──────────────────────────────────────────────────────────
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -1047,35 +1063,22 @@
 
   // ── Review system ──────────────────────────────────────────────────────────
   const CASES = [
-    { id: 'manicure', num: '01', industry: 'Красота / Маникюр', title: 'Бот записи в салон' },
-    { id: 'shop',     num: '02', industry: 'Интернет-магазин',  title: 'Магазин в Telegram' },
-    { id: 'aibots',   num: '03', industry: 'B2B / Услуги',      title: 'Лендинг для AI-агентства' },
-    { id: 'bfl',      num: '04', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги' },
+    { id: 'manicure', num: '01', industry: 'Красота / Маникюр',    title: 'Бот записи в салон' },
+    { id: 'shop',     num: '02', industry: 'Интернет-магазин',      title: 'Магазин в Telegram' },
+    { id: 'aibots',   num: '03', industry: 'B2B / Услуги',          title: 'Лендинг для AI-агентства' },
+    { id: 'bfl',      num: '04', industry: 'Спорт / Развлечение',   title: 'Сайт футбольной лиги' },
   ];
-
-  const STORAGE_KEY = 'xudojjjnik_reviews_v1';
-
-  function loadReviews() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
-    catch { return {}; }
-  }
-
-  function saveReviews(data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  }
-
-  function formatDate(ts) {
-    const d = new Date(ts);
-    return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
-  }
 
   function starsHtml(n) {
     return '★'.repeat(n) + '☆'.repeat(5 - n);
   }
 
-  function renderReviews(caseId, listEl, countBadge) {
-    const all = loadReviews();
-    const reviews = (all[caseId] || []);
+  function formatDate(str) {
+    const d = new Date(str);
+    return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function renderReviews(reviews, listEl, countBadge) {
     listEl.innerHTML = '';
     reviews.forEach(r => {
       const card = document.createElement('div');
@@ -1083,16 +1086,26 @@
       card.innerHTML = `
         <div class="review-top">
           <div class="review-stars">${starsHtml(r.stars)}</div>
-          <div class="review-date">${formatDate(r.ts)}</div>
+          <div class="review-date">${formatDate(r.created_at)}</div>
         </div>
-        <div class="review-text">${r.text}</div>
+        <div class="review-text">${r.text.replace(/</g,'&lt;')}</div>
         <div class="review-author">
           <div class="review-avatar">${r.name.charAt(0).toUpperCase()}</div>
-          <div class="review-name">${r.name}</div>
+          <div class="review-name">${r.name.replace(/</g,'&lt;')}</div>
         </div>`;
       listEl.appendChild(card);
     });
     countBadge.textContent = reviews.length > 0 ? `${reviews.length} отз.` : 'Нет отзывов';
+  }
+
+  async function loadAndRender(caseId, listEl, countBadge) {
+    try {
+      listEl.innerHTML = '<div style="color:var(--muted);font-size:13px;padding:8px 0">Загрузка...</div>';
+      const reviews = await getReviews(caseId);
+      renderReviews(reviews, listEl, countBadge);
+    } catch(e) {
+      listEl.innerHTML = '<div style="color:rgba(239,68,68,0.7);font-size:13px;padding:8px 0">Ошибка загрузки отзывов</div>';
+    }
   }
 
   function buildCases() {
@@ -1110,7 +1123,7 @@
             </div>
           </div>
           <div class="review-case-right">
-            <span class="review-count-badge" id="badge-${c.id}">Нет отзывов</span>
+            <span class="review-count-badge" id="badge-${c.id}">...</span>
             <div class="review-toggle-icon">▾</div>
           </div>
         </div>
@@ -1130,13 +1143,26 @@
         </div>`;
       container.appendChild(block);
 
-      // toggle open/close
+      const listEl     = document.getElementById(`list-${c.id}`);
+      const countBadge = document.getElementById(`badge-${c.id}`);
+
+      // Загружаем счётчик сразу (до открытия)
+      getReviews(c.id).then(reviews => {
+        countBadge.textContent = reviews.length > 0 ? `${reviews.length} отз.` : 'Нет отзывов';
+      }).catch(() => { countBadge.textContent = '—'; });
+
+      // toggle — грузим отзывы при первом открытии
+      let loaded = false;
       const header = block.querySelector('.review-case-header');
       header.addEventListener('click', () => {
         block.classList.toggle('open');
+        if (block.classList.contains('open') && !loaded) {
+          loaded = true;
+          loadAndRender(c.id, listEl, countBadge);
+        }
       });
 
-      // star selection
+      // stars
       let selectedStars = 5;
       const starBtns = block.querySelectorAll('.star-btn');
       function updateStars(val) {
@@ -1150,29 +1176,38 @@
         b.addEventListener('mouseleave', () => updateStars(selectedStars));
       });
 
-      // render existing
-      renderReviews(c.id, document.getElementById(`list-${c.id}`), document.getElementById(`badge-${c.id}`));
-
       // submit
-      document.getElementById(`submit-${c.id}`).addEventListener('click', () => {
-        const nameEl = document.getElementById(`name-${c.id}`);
-        const textEl = document.getElementById(`text-${c.id}`);
+      document.getElementById(`submit-${c.id}`).addEventListener('click', async () => {
+        const nameEl   = document.getElementById(`name-${c.id}`);
+        const textEl   = document.getElementById(`text-${c.id}`);
+        const submitEl = document.getElementById(`submit-${c.id}`);
         const name = nameEl.value.trim();
         const text = textEl.value.trim();
-        if (!name || !text) { nameEl.style.borderColor = !name ? 'rgba(239,68,68,0.5)' : ''; textEl.style.borderColor = !text ? 'rgba(239,68,68,0.5)' : ''; return; }
-        nameEl.style.borderColor = ''; textEl.style.borderColor = '';
 
-        const all = loadReviews();
-        if (!all[c.id]) all[c.id] = [];
-        all[c.id].push({ name, text, stars: selectedStars, ts: Date.now() });
-        saveReviews(all);
+        if (!name || !text) {
+          nameEl.style.borderColor = !name ? 'rgba(239,68,68,0.5)' : '';
+          textEl.style.borderColor = !text ? 'rgba(239,68,68,0.5)' : '';
+          return;
+        }
+        nameEl.style.borderColor = '';
+        textEl.style.borderColor = '';
 
-        renderReviews(c.id, document.getElementById(`list-${c.id}`), document.getElementById(`badge-${c.id}`));
-        nameEl.value = ''; textEl.value = ''; updateStars(5);
+        submitEl.disabled = true;
+        submitEl.textContent = 'Отправляем...';
 
-        const successEl = document.getElementById(`success-${c.id}`);
-        successEl.classList.add('show');
-        setTimeout(() => successEl.classList.remove('show'), 3500);
+        try {
+          await insertReview({ case_id: c.id, name, text, stars: selectedStars });
+          nameEl.value = ''; textEl.value = ''; updateStars(5);
+          await loadAndRender(c.id, listEl, countBadge);
+          const successEl = document.getElementById(`success-${c.id}`);
+          successEl.classList.add('show');
+          setTimeout(() => successEl.classList.remove('show'), 3500);
+        } catch(e) {
+          alert('Ошибка при отправке. Попробуйте ещё раз.');
+        } finally {
+          submitEl.disabled = false;
+          submitEl.textContent = 'Отправить отзыв';
+        }
       });
     });
   }

@@ -88,7 +88,7 @@
     .portfolio-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 60px; }
     .case-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: auto 1fr 1fr 1fr; gap: 40px; align-items: start; transition: border-color 0.3s; }
     .case-card:hover { border-color: rgba(255,255,255,0.12); }
-    .case-num { font-family: var(--font-display); font-size: 48px; font-weight: 800; color: rgba(255,255,255,0.06); letter-spacing: -2px; line-height: 1; min-width: 60px; }
+    .case-num { font-family: var(--font-display); font-size: 48px; font-weight: 800; color: rgba(0,229,255,0.25); letter-spacing: -2px; line-height: 1; min-width: 60px; }
     .case-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
     .case-industry { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
     .case-col-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 8px; }
@@ -156,10 +156,10 @@
     .review-cases { margin-top: 56px; display: flex; flex-direction: column; gap: 32px; }
     .review-case-block { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: border-color 0.3s; }
     .review-case-block:hover { border-color: rgba(255,255,255,0.1); }
-    .review-case-header { padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s; }
+    .review-case-header { padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s; overflow: hidden; }
     .review-case-header:hover { background: rgba(255,255,255,0.02); }
     .review-case-meta { display: flex; align-items: center; gap: 16px; }
-    .review-case-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: rgba(255,255,255,0.08); letter-spacing: -1px; min-width: 40px; }
+    .review-case-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: rgba(0,229,255,0.2); letter-spacing: -1px; min-width: 40px; }
     .review-case-industry { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
     .review-case-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
     .review-case-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
@@ -208,6 +208,9 @@
     footer { border-top: 1px solid var(--border); padding: 32px 5%; display: flex; align-items: center; justify-content: space-between; }
     .footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 800; letter-spacing: -0.5px; }
     .footer-copy { color: var(--muted); font-size: 13px; }
+    @media (max-width: 600px) {
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 5%; }
+    }
 
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }

@@ -128,8 +128,9 @@
     .pricing-desc { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; font-weight: 300; }
     .pricing-price { margin-bottom: 32px; }
     .pricing-from { font-size: 12px; color: var(--muted); font-weight: 400; }
-    .pricing-amount { font-family: var(--font-display); font-size: 42px; font-weight: 800; letter-spacing: -2px; color: var(--text); }
-    .pricing-currency { font-size: 18px; font-weight: 600; vertical-align: super; margin-right: 2px; color: var(--muted); }
+    .pricing-amount-wrap { display: flex; align-items: baseline; gap: 2px; flex-wrap: nowrap; white-space: nowrap; }
+    .pricing-amount { font-family: var(--font-display); font-size: 42px; font-weight: 800; letter-spacing: -2px; color: var(--text); white-space: nowrap; }
+    .pricing-currency { font-size: 18px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
     .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; flex: 1; }
     .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); font-weight: 300; line-height: 1.5; }
     .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
@@ -156,15 +157,16 @@
     .review-cases { margin-top: 56px; display: flex; flex-direction: column; gap: 32px; }
     .review-case-block { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: border-color 0.3s; }
     .review-case-block:hover { border-color: rgba(255,255,255,0.1); }
-    .review-case-header { padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s; overflow: hidden; }
+    .review-case-header { padding: 20px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s; }
     .review-case-header:hover { background: rgba(255,255,255,0.02); }
-    .review-case-meta { display: flex; align-items: center; gap: 16px; }
-    .review-case-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: rgba(0,229,255,0.2); letter-spacing: -1px; min-width: 40px; }
+    .review-case-meta { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
+    .review-case-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: rgba(0,229,255,0.2); letter-spacing: -1px; flex-shrink: 0; }
+    .review-case-info { min-width: 0; }
     .review-case-industry { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-    .review-case-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
-    .review-case-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
-    .review-count-badge { padding: 4px 12px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); border-radius: 100px; font-size: 12px; color: var(--accent); font-weight: 500; }
-    .review-toggle-icon { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); transition: transform 0.3s, background 0.2s; }
+    .review-case-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .review-case-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .review-count-badge { padding: 4px 10px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); border-radius: 100px; font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; }
+    .review-toggle-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--muted); transition: transform 0.3s, background 0.2s; flex-shrink: 0; }
     .review-case-block.open .review-toggle-icon { transform: rotate(180deg); background: rgba(0,229,255,0.08); color: var(--accent); }
     .review-case-body { display: none; padding: 28px 32px; }
     .review-case-block.open .review-case-body { display: block; }
@@ -294,7 +296,7 @@
       <div class="service-card reveal">
         <div class="service-icon"><img src="free-icon-coding-6633017.png" alt="Сайты" width="26" height="26"></div>
         <div class="service-title">Разработка сайтов</div>
-        <div class="service-desc">Лендинги и сайты-визитки с современным дизайном. Быстрая загрузка, мобильная адаптация, SEO-структура. Ничего лишнего — только то, что конвертирует посетителя в клиента.</div>
+        <div class="service-desc">Лендинги и сайты-визитки с современным дизайном. Быстрая загрузка, мобильная адаптация, SEO-структура. Никакого лишнего — только то, что конвертирует посетителя в клиента.</div>
       </div>
       <div class="service-card reveal">
         <div class="service-icon"><img src="free-icon-chat-bot-18864614.png" alt="Боты" width="26" height="26"></div>
@@ -349,7 +351,7 @@
     <p class="section-sub reveal">Четыре шага от идеи до работающего продукта.</p>
     <div class="process-steps">
       <div class="step reveal"><div class="step-num">01</div><div class="step-title">Анализ задачи</div><div class="step-desc">Разбираемся в вашем бизнесе, целях и болях. Понимаем, что нужно сделать и зачем.</div></div>
-      <div class="step reveal"><div class="step-num">02</div><div class="step-title">Разработка решения</div><div class="step-desc">Проектирую и пишу код. Ничего лишнего — только то, что решает задачу.</div></div>
+      <div class="step reveal"><div class="step-num">02</div><div class="step-title">Разработка решения</div><div class="step-desc">Проектирую и пишу код. Никакого лишнего — только то, что решает задачу.</div></div>
       <div class="step reveal"><div class="step-num">03</div><div class="step-title">Запуск</div><div class="step-desc">Тестируем, запускаем, настраиваем. Убеждаемся, что всё работает как надо.</div></div>
       <div class="step reveal"><div class="step-num">04</div><div class="step-title">Поддержка</div><div class="step-desc">Остаюсь на связи. Помогу при изменениях, доработках или любых вопросах.</div></div>
     </div>
@@ -392,7 +394,7 @@
         <div class="pricing-desc">Одностраничный сайт под конкретную цель — продажа услуги, запись, заявка.</div>
         <div class="pricing-price">
           <div class="pricing-from">от</div>
-          <div><span class="pricing-currency">₽</span><span class="pricing-amount">5 000</span></div>
+          <div class="pricing-amount-wrap"><span class="pricing-currency">₽</span><span class="pricing-amount">5 000</span></div>
         </div>
         <ul class="pricing-features">
           <li>Дизайн под ваш бренд</li>
@@ -409,7 +411,7 @@
         <div class="pricing-desc">Умный бот под вашу задачу: запись, магазин, заявки, уведомления, админ-панель.</div>
         <div class="pricing-price">
           <div class="pricing-from">от</div>
-          <div><span class="pricing-currency">₽</span><span class="pricing-amount">8 000</span></div>
+          <div class="pricing-amount-wrap"><span class="pricing-currency">₽</span><span class="pricing-amount">8 000</span></div>
         </div>
         <ul class="pricing-features">
           <li>FSM-логика (состояния)</li>
@@ -427,7 +429,7 @@
         <div class="pricing-desc">Полный цикл: лендинг + бот + автоматизация в одной связке. Один исполнитель, нет разрывов.</div>
         <div class="pricing-price">
           <div class="pricing-from">от</div>
-          <div><span class="pricing-currency">₽</span><span class="pricing-amount">15 000</span></div>
+          <div class="pricing-amount-wrap"><span class="pricing-currency">₽</span><span class="pricing-amount">15 000</span></div>
         </div>
         <ul class="pricing-features">
           <li>Всё из тарифов Лендинг и Бот</li>
@@ -595,7 +597,7 @@
         <div class="review-case-header">
           <div class="review-case-meta">
             <div class="review-case-num">${c.num}</div>
-            <div>
+            <div class="review-case-info">
               <div class="review-case-industry">${c.industry}</div>
               <div class="review-case-title">${c.title}</div>
             </div>

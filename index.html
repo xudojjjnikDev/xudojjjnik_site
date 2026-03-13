@@ -157,19 +157,20 @@
     .review-cases { margin-top: 56px; display: flex; flex-direction: column; gap: 32px; }
     .review-case-block { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: border-color 0.3s; }
     .review-case-block:hover { border-color: rgba(255,255,255,0.1); }
-    .review-case-header { padding: 20px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s; }
+    .review-case-header { padding: 20px; display: flex; flex-direction: column; gap: 12px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s; }
     .review-case-header:hover { background: rgba(255,255,255,0.02); }
-    .review-case-meta { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
-    .review-case-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: rgba(0,229,255,0.2); letter-spacing: -1px; flex-shrink: 0; }
+    .review-case-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .review-case-meta { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .review-case-num { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: rgba(0,229,255,0.2); letter-spacing: -1px; flex-shrink: 0; }
     .review-case-info { min-width: 0; }
-    .review-case-industry { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-    .review-case-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .review-case-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .review-count-badge { padding: 4px 10px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); border-radius: 100px; font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; }
+    .review-case-industry { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+    .review-case-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
     .review-toggle-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--muted); transition: transform 0.3s, background 0.2s; flex-shrink: 0; }
     .review-case-block.open .review-toggle-icon { transform: rotate(180deg); background: rgba(0,229,255,0.08); color: var(--accent); }
-    .review-project-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.2); border-radius: 100px; font-size: 12px; color: var(--accent); font-weight: 500; text-decoration: none; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
-    .review-project-link:hover { background: rgba(0,229,255,0.12); border-color: rgba(0,229,255,0.4); transform: translateY(-1px); }
+    .review-case-bottom { display: flex; align-items: center; gap: 8px; }
+    .review-count-badge { padding: 4px 10px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); border-radius: 100px; font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; }
+    .review-project-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.2); border-radius: 100px; font-size: 12px; color: var(--accent); font-weight: 500; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .review-project-link:hover { background: rgba(0,229,255,0.12); border-color: rgba(0,229,255,0.4); }
     .review-project-link svg { flex-shrink: 0; }
     .review-case-body { display: none; padding: 28px 32px; }
     .review-case-block.open .review-case-body { display: block; }
@@ -546,9 +547,9 @@
 
   // ── Reviews ────────────────────────────────────────────────────────────────
   const CASES = [
-    { id: 'manicure', num: '01', industry: 'Красота / Маникюр',  title: 'Бот записи в салон',    link: '', linkLabel: 'Открыть бота' },
-    { id: 'shop',     num: '02', industry: 'Интернет-магазин',    title: 'Магазин в Telegram',    link: '',      linkLabel: 'Открыть бота' },
-    { id: 'bfl',      num: '03', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги',  link: 'https://br-football-league.ru', linkLabel: 'Открыть сайт' },
+    { id: 'manicure', num: '01', industry: 'Красота / Маникюр',  title: 'Бот записи в салон',    link: 'https://t.me/lolya_manicure_bot', linkLabel: 'Открыть бота' },
+    { id: 'shop',     num: '02', industry: 'Интернет-магазин',    title: 'Магазин в Telegram',    link: 'https://t.me/your_shop_bot',      linkLabel: 'Открыть бота' },
+    { id: 'bfl',      num: '03', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги',  link: 'https://xudojjjnikdev.github.io/bfl', linkLabel: 'Открыть сайт' },
   ];
 
   const starsHtml  = n => '★'.repeat(n) + '☆'.repeat(5 - n);
@@ -591,20 +592,22 @@
       block.className = 'review-case-block';
       block.innerHTML = `
         <div class="review-case-header">
-          <div class="review-case-meta">
-            <div class="review-case-num">${c.num}</div>
-            <div class="review-case-info">
-              <div class="review-case-industry">${c.industry}</div>
-              <div class="review-case-title">${c.title}</div>
+          <div class="review-case-top">
+            <div class="review-case-meta">
+              <div class="review-case-num">${c.num}</div>
+              <div class="review-case-info">
+                <div class="review-case-industry">${c.industry}</div>
+                <div class="review-case-title">${c.title}</div>
+              </div>
             </div>
+            <div class="review-toggle-icon">▾</div>
           </div>
-          <div class="review-case-right">
-            <a class="review-project-link" href="${c.link}" target="_blank">
+          <div class="review-case-bottom">
+            <a class="review-project-link" href="${c.link}" target="_blank" onclick="event.stopPropagation()">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               ${c.linkLabel}
             </a>
             <span class="review-count-badge" id="badge-${c.id}">...</span>
-            <div class="review-toggle-icon">▾</div>
           </div>
         </div>
         <div class="review-case-body">

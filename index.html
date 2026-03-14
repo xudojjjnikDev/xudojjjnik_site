@@ -169,7 +169,8 @@
     .review-case-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
     .review-toggle-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--muted); transition: transform 0.3s, background 0.2s; flex-shrink: 0; }
     .review-case-block.open .review-toggle-icon { transform: rotate(180deg); background: rgba(0,229,255,0.08); color: var(--accent); }
-    .review-case-bottom { display: flex; align-items: center; gap: 8px; }
+    .review-case-bottom { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+    .review-case-bottom-links { display: flex; gap: 8px; flex-wrap: wrap; }
     .review-count-badge { padding: 4px 10px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); border-radius: 100px; font-size: 11px; color: var(--accent); font-weight: 500; white-space: nowrap; }
     .review-project-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.2); border-radius: 100px; font-size: 12px; color: var(--accent); font-weight: 500; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
     .review-project-link:hover { background: rgba(0,229,255,0.12); border-color: rgba(0,229,255,0.4); }
@@ -191,13 +192,13 @@
     .review-input { flex: 1; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; color: var(--text); font-family: var(--font-body); font-size: 14px; outline: none; transition: border-color 0.2s; }
     .review-input:focus { border-color: rgba(0,229,255,0.25); }
     .review-input::placeholder { color: rgba(154,165,187,0.5); }
-    .review-stars-select { display: flex; gap: 6px; margin-bottom: 12px; }
+    .review-stars-select { display: flex; gap: 6px; margin-bottom: 12px; justify-content: center; }
     .star-btn { background: none; border: none; font-size: 22px; cursor: pointer; color: rgba(255,255,255,0.15); transition: color 0.15s, transform 0.15s; padding: 0 2px; }
     .star-btn:hover, .star-btn.active { color: #f59e0b; transform: scale(1.15); }
     .review-textarea { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; color: var(--text); font-family: var(--font-body); font-size: 14px; font-weight: 300; line-height: 1.7; resize: none; outline: none; transition: border-color 0.2s; margin-bottom: 12px; }
     .review-textarea:focus { border-color: rgba(0,229,255,0.25); }
     .review-textarea::placeholder { color: rgba(154,165,187,0.45); }
-    .review-submit { background: var(--accent); color: #000; border: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; }
+    .review-submit { background: var(--accent); color: #000; border: none; padding: 14px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; width: 100%; text-align: center; }
     .review-submit:hover { background: #fff; transform: translateY(-1px); }
     .review-submit:disabled { opacity: 0.5; cursor: default; transform: none; }
     .review-success { display: none; align-items: center; gap: 10px; padding: 14px 18px; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-radius: 10px; font-size: 14px; color: #86efac; margin-top: 8px; }
@@ -329,19 +330,19 @@
   <p class="section-sub reveal">Что было до, что сделал я, и что получилось в итоге.</p>
   <div class="portfolio-grid">
     <div class="case-card reveal">
-      <div class="case-num">01</div>
+      <div class="case-num">1</div>
       <div><div class="case-industry">Красота / Маникюр</div><div class="case-title">Сайт + бот записи в салон</div></div>
       <div><div class="case-col-label">Проблема</div><div class="case-col-text">Мастер тратила 2–3 часа в день на ответы в Директе и запись через переписку. Не было ни сайта, ни автоматизации — клиенты уходили, не дождавшись ответа.</div></div>
       <div><div class="case-col-label">Результат</div><div class="case-result-text">Лендинг-визитка + Telegram-бот с онлайн-записью, напоминаниями и защитой от двойных бронирований. Запись 24/7, ноль пропущенных клиентов.</div></div>
     </div>
     <div class="case-card reveal">
-      <div class="case-num">02</div>
+      <div class="case-num">2</div>
       <div><div class="case-industry">Интернет-магазин</div><div class="case-title">Telegram-бот магазина снюса</div></div>
       <div><div class="case-col-label">Проблема</div><div class="case-col-text">Продажа снюса велась вручную — клиент писал, менеджер отвечал, заказы путались. Нет учёта, нет автоматизации.</div></div>
       <div><div class="case-col-label">Результат</div><div class="case-result-text">Полноценный бот-магазин с каталогом, корзиной, заказами и панелью администратора. Менеджер избавился от рутины.</div></div>
     </div>
     <div class="case-card reveal">
-      <div class="case-num">03</div>
+      <div class="case-num">3</div>
       <div><div class="case-industry">Спорт / Развлечение</div><div class="case-title">Сайт футбольной лиги</div></div>
       <div><div class="case-col-label">Проблема</div><div class="case-col-text">Любительская футбольная лига вела таблицу в Excel и вручную сообщала результаты в группе. Нужен был профессиональный инструмент.</div></div>
       <div><div class="case-col-label">Результат</div><div class="case-result-text">Полноценный сайт лиги: таблица, результаты матчей, профили команд, панель администратора с undo-историей.</div></div>
@@ -355,10 +356,10 @@
     <h2 class="section-title reveal">Просто и прозрачно</h2>
     <p class="section-sub reveal">Четыре шага от идеи до работающего продукта.</p>
     <div class="process-steps">
-      <div class="step reveal"><div class="step-num">01</div><div class="step-title">Анализ задачи</div><div class="step-desc">Разбираемся в вашем бизнесе, целях и болях. Понимаем, что нужно сделать и зачем.</div></div>
-      <div class="step reveal"><div class="step-num">02</div><div class="step-title">Разработка решения</div><div class="step-desc">Проектирую и пишу код. Никакого лишнего — только то, что решает задачу.</div></div>
-      <div class="step reveal"><div class="step-num">03</div><div class="step-title">Запуск</div><div class="step-desc">Тестируем, запускаем, настраиваем. Убеждаемся, что всё работает как надо.</div></div>
-      <div class="step reveal"><div class="step-num">04</div><div class="step-title">Поддержка</div><div class="step-desc">Остаюсь на связи. Помогу при изменениях, доработках или любых вопросах.</div></div>
+      <div class="step reveal"><div class="step-num">1</div><div class="step-title">Анализ задачи</div><div class="step-desc">Разбираемся в вашем бизнесе, целях и болях. Понимаем, что нужно сделать и зачем.</div></div>
+      <div class="step reveal"><div class="step-num">2</div><div class="step-title">Разработка решения</div><div class="step-desc">Проектирую и пишу код. Никакого лишнего — только то, что решает задачу.</div></div>
+      <div class="step reveal"><div class="step-num">3</div><div class="step-title">Запуск</div><div class="step-desc">Тестируем, запускаем, настраиваем. Убеждаемся, что всё работает как надо.</div></div>
+      <div class="step reveal"><div class="step-num">4</div><div class="step-title">Поддержка</div><div class="step-desc">Остаюсь на связи. Помогу при изменениях, доработках или любых вопросах.</div></div>
     </div>
   </div>
 </div>
@@ -572,9 +573,9 @@
 
   // ── Reviews ────────────────────────────────────────────────────────────────
   const CASES = [
-    { id: 'manicure', num: '01', industry: 'Красота / Маникюр',  title: 'Сайт + бот записи в салон',   link: 'https://t.me/lolya_manicure_bot', linkLabel: 'Открыть бота', link2: 'https://xudojjjnikdev.github.io/nails-site/', linkLabel2: 'Открыть сайт' },
-    { id: 'shop',     num: '02', industry: 'Интернет-магазин',    title: 'Telegram-бот магазина снюса', link: 'https://t.me/snushubbestbot',      linkLabel: 'Открыть бота' },
-    { id: 'bfl',      num: '03', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги',        link: 'https://br-football-league.ru', linkLabel: 'Открыть сайт' },
+    { id: 'manicure', num: '1', industry: 'Красота / Маникюр',  title: 'Сайт + бот записи в салон',   link: 'https://t.me/Nail_YulyaBot', linkLabel: 'Открыть бота', link2: 'https://xudojjjnikdev.github.io/nails-site/', linkLabel2: 'Открыть сайт' },
+    { id: 'shop',     num: '2', industry: 'Интернет-магазин',    title: 'Telegram-бот магазина снюса', link: 'https://t.me/snushubbestbot',      linkLabel: 'Открыть бота' },
+    { id: 'brfl',      num: '3', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги',        link: 'https://br-football-league.ru', linkLabel: 'Открыть сайт' },
   ];
 
   const starsHtml  = n => '★'.repeat(n) + '☆'.repeat(5 - n);
@@ -628,14 +629,16 @@
             <div class="review-toggle-icon">▾</div>
           </div>
           <div class="review-case-bottom">
-            <a class="review-project-link" href="${c.link}" target="_blank" onclick="event.stopPropagation()">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              ${c.linkLabel}
-            </a>
-            ${c.link2 ? `<a class="review-project-link" href="${c.link2}" target="_blank" onclick="event.stopPropagation()">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              ${c.linkLabel2}
-            </a>` : ''}
+            <div class="review-case-bottom-links">
+              <a class="review-project-link" href="${c.link}" target="_blank" onclick="event.stopPropagation()">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                ${c.linkLabel}
+              </a>
+              ${c.link2 ? `<a class="review-project-link" href="${c.link2}" target="_blank" onclick="event.stopPropagation()">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                ${c.linkLabel2}
+              </a>` : ''}
+            </div>
             <span class="review-count-badge" id="badge-${c.id}">...</span>
           </div>
         </div>

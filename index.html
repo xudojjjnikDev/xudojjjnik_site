@@ -73,7 +73,8 @@
     /* SERVICES */
     .services-section { border-top: 1px solid var(--border); background: var(--bg2); max-width: 100%; padding: 100px 5%; }
     .services-inner { max-width: 1200px; margin: 0 auto; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }
+    @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
     .service-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 36px 32px; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
     .service-card:hover { transform: translateY(-4px); border-color: rgba(0,229,255,0.2); }
     .service-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(0,229,255,0.04) 0%, transparent 70%); opacity: 0; transition: opacity 0.3s; }
@@ -118,7 +119,8 @@
     /* PRICING */
     .pricing-section { border-top: 1px solid var(--border); background: var(--bg2); max-width: 100%; padding: 100px 5%; }
     .pricing-inner { max-width: 1200px; margin: 0 auto; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }
+    @media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
     .pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; }
     .pricing-card:hover { transform: translateY(-4px); }
     .pricing-card.featured { border-color: rgba(0,229,255,0.35); background: var(--surface2); }
@@ -215,6 +217,7 @@
     .footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 800; letter-spacing: -0.5px; }
     .footer-copy { color: var(--muted); font-size: 13px; }
     @media (max-width: 600px) {
+      .services-grid, .pricing-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 5%; }
     }
 
@@ -224,7 +227,6 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .services-grid, .pricing-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .case-card { grid-template-columns: 1fr; gap: 24px; }
       .case-num { font-size: 32px; }
@@ -295,12 +297,12 @@
   <div class="services-inner">
     <span class="section-tag reveal">Услуги</span>
     <h2 class="section-title reveal">Что я делаю</h2>
-    <p class="section-sub reveal">Три направления, которые закрывают большинство потребностей малого бизнеса в digital.</p>
+    <p class="section-sub reveal">Четыре направления, которые закрывают большинство потребностей малого бизнеса в digital.</p>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon"><img src="free-icon-coding-6633017.png" alt="Сайты" width="26" height="26"></div>
         <div class="service-title">Разработка сайтов</div>
-        <div class="service-desc">Лендинги и сайты-визитки с современным дизайном. Быстрая загрузка, мобильная адаптация, SEO-структура. Никакого лишнего — только то, что конвертирует посетителя в клиента.</div>
+        <div class="service-desc">Лендинги и сайты-визитки с современным дизайном. Быстрая загрузка, мобильная адаптация, SEO-структура. Только то, что конвертирует посетителя в клиента.</div>
       </div>
       <div class="service-card reveal">
         <div class="service-icon"><img src="free-icon-chat-bot-18864614.png" alt="Боты" width="26" height="26"></div>
@@ -311,6 +313,11 @@
         <div class="service-icon"><img src="free-icon-process-10517547.png" alt="Автоматизация" width="26" height="26"></div>
         <div class="service-title">Автоматизация бизнеса</div>
         <div class="service-desc">Связываю сайт, бот и внутренние процессы в единую систему. Заявка с сайта → бот уведомляет менеджера → клиент получает подтверждение. Полный цикл без ручного труда.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><img src="free-icon-coding-6633017.png" alt="Интернет-магазин" width="26" height="26"></div>
+        <div class="service-title">Интернет-магазины</div>
+        <div class="service-desc">Полноценные магазины с каталогом, корзиной, фильтрами и оформлением заказа. Подходит для продажи физических товаров — мебель, handmade, продукты питания и всё что угодно.</div>
       </div>
     </div>
   </div>
@@ -323,13 +330,13 @@
   <div class="portfolio-grid">
     <div class="case-card reveal">
       <div class="case-num">01</div>
-      <div><div class="case-industry">Красота / Маникюр</div><div class="case-title">Бот записи в салон</div></div>
-      <div><div class="case-col-label">Проблема</div><div class="case-col-text">Мастер тратила 2–3 часа в день на ответы в Директе и запись через переписку. Клиенты уходили, не дождавшись ответа.</div></div>
-      <div><div class="case-col-label">Результат</div><div class="case-result-text">Telegram-бот с онлайн-записью, напоминаниями и защитой от двойных бронирований. Запись 24/7, ноль пропущенных клиентов.</div></div>
+      <div><div class="case-industry">Красота / Маникюр</div><div class="case-title">Сайт + бот записи в салон</div></div>
+      <div><div class="case-col-label">Проблема</div><div class="case-col-text">Мастер тратила 2–3 часа в день на ответы в Директе и запись через переписку. Не было ни сайта, ни автоматизации — клиенты уходили, не дождавшись ответа.</div></div>
+      <div><div class="case-col-label">Результат</div><div class="case-result-text">Лендинг-визитка + Telegram-бот с онлайн-записью, напоминаниями и защитой от двойных бронирований. Запись 24/7, ноль пропущенных клиентов.</div></div>
     </div>
     <div class="case-card reveal">
       <div class="case-num">02</div>
-      <div><div class="case-industry">Интернет-магазин</div><div class="case-title">Магазин в Telegram</div></div>
+      <div><div class="case-industry">Интернет-магазин</div><div class="case-title">Telegram-бот магазина снюса</div></div>
       <div><div class="case-col-label">Проблема</div><div class="case-col-text">Продажа снюса велась вручную — клиент писал, менеджер отвечал, заказы путались. Нет учёта, нет автоматизации.</div></div>
       <div><div class="case-col-label">Результат</div><div class="case-result-text">Полноценный бот-магазин с каталогом, корзиной, заказами и панелью администратора. Менеджер избавился от рутины.</div></div>
     </div>
@@ -435,6 +442,24 @@
           <li>Автоматизация через Make.com</li>
           <li>Единый стиль и брендинг</li>
           <li>Срок: 7–14 дней</li>
+        </ul>
+        <a href="https://t.me/xudojjjnik" class="pricing-cta" target="_blank">Обсудить проект</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-badge">Магазин</div>
+        <div class="pricing-name">Интернет-магазин</div>
+        <div class="pricing-desc">Полноценный сайт для продажи физических товаров — с каталогом, корзиной, фильтрами и оформлением заказа.</div>
+        <div class="pricing-price">
+          <div class="pricing-from">от</div>
+          <div class="pricing-amount-wrap"><span class="pricing-currency">₽</span><span class="pricing-amount">20 000</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li>Каталог товаров с фото и описанием</li>
+          <li>Корзина и оформление заказа</li>
+          <li>Фильтры и поиск по товарам</li>
+          <li>Уведомление о заказе в Telegram</li>
+          <li>Мобильная адаптация</li>
+          <li>Срок: 10–20 дней</li>
         </ul>
         <a href="https://t.me/xudojjjnik" class="pricing-cta" target="_blank">Обсудить проект</a>
       </div>
@@ -547,9 +572,9 @@
 
   // ── Reviews ────────────────────────────────────────────────────────────────
   const CASES = [
-    { id: 'manicure', num: '01', industry: 'Красота / Маникюр',  title: 'Бот записи в салон',    link: 'https://t.me/Nail_YulyaBot', linkLabel: 'Открыть бота' },
-    { id: 'shop',     num: '02', industry: 'Интернет-магазин',    title: 'Магазин в Telegram',    link: 'https://t.me/snushubbestbot',      linkLabel: 'Открыть бота' },
-    { id: 'bfl',      num: '03', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги',  link: 'https://br-football-league.ru', linkLabel: 'Открыть сайт' },
+    { id: 'manicure', num: '01', industry: 'Красота / Маникюр',  title: 'Сайт + бот записи в салон',   link: 'https://t.me/lolya_manicure_bot', linkLabel: 'Открыть бота' },
+    { id: 'shop',     num: '02', industry: 'Интернет-магазин',    title: 'Telegram-бот магазина снюса', link: 'https://t.me/your_shop_bot',      linkLabel: 'Открыть бота' },
+    { id: 'bfl',      num: '03', industry: 'Спорт / Развлечение', title: 'Сайт футбольной лиги',        link: 'https://xudojjjnikdev.github.io/bfl', linkLabel: 'Открыть сайт' },
   ];
 
   const starsHtml  = n => '★'.repeat(n) + '☆'.repeat(5 - n);
